@@ -2,19 +2,20 @@ import java.util.Objects;
 public class Employee {
     private String employeeName;// конструкция для ввода данных сотрудника
     private String employeeSurname;
-    private  int Department;
+
+    private int department;
     private int Salary;
 
-    public Employee (String employeeSurname, String employeeName, int Department, int Salary) {//Конструктор для заполнения всех полей
+    public Employee (String employeeSurname, String employeeName, int department, int Salary) {//Конструктор для заполнения всех полей
         this.employeeSurname = employeeSurname;
         this.employeeName = employeeName;
-        this.Department = Department;
         this.Salary = Salary;
+        this.department = department;
     }
 
-    public static void Department (String[] args) {//количество отделов
-        int[] department = new int [5];
-        for (int id = 0; id < department.length; id++) {// счетчик id
+    public static void Department  (String[] args) {//количество отделов
+        int[] Department = new int [5];
+        for (int id = 0; id < Department.length; id++) {// счетчик id
 
         }
     }
@@ -27,16 +28,15 @@ public class Employee {
         return this.employeeName;
     }
 
-    public int getDepartment() {
-        return this.Department;
-    }
+    public int getDepartment(){return department;}
 
     public int getSalary() {
         return this.Salary;
     }
+
 //Сеттеры для отдела и ЗП
-    public void setDepartment(int Department) {
-        this.Department = Department;
+    public void setDepartment(int department) {
+        this.department = department;
     }
     public void setSalary(int Salary) {
         this.Salary = Salary;
@@ -45,7 +45,7 @@ public class Employee {
     @Override
     public String toString() {
         return "Employee name is - " + this.employeeSurname + " " + this.employeeName + "." +
-                "\nEmployee department is " + this.Department + "\nEmployee salary is " + this.Salary + "\n===============\n";
+                "\nEmployee department is " + this.department + "\nEmployee salary is " + this.Salary + "\n===============\n";
 
     }
     @Override
