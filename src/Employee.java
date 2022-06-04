@@ -3,27 +3,20 @@ public class Employee {
     private String employeeName;// конструкция для ввода данных сотрудника
     private String employeeSurname;
 
+    private int id;
     private int department;
     private int Salary;
-    private static int id;
+    private static int count = 0;
 
-    public Employee(String employeeSurname, String employeeName, int Salary) {//Конструктор для заполнения всех полей
+    public Employee(String employeeSurname, String employeeName, int department, int Salary) {//Конструктор для заполнения всех полей
         this.employeeSurname = employeeSurname;
         this.employeeName = employeeName;
         this.Salary = Salary;
-
+         this.id = ++count;
+         this.department = department;
     }
 
-    public int Department() {//количество отделов
-        int[] Department = new int[5];
-        int id = 0;
-        do {
-            System.out.println(id);
-            id++;
-        }
-        while (id < Department.length);
-        return id;
-    }
+
 
 
         //Геттеры для всех полей
@@ -44,7 +37,7 @@ public class Employee {
         }
 
         public int getId () {
-            return Department();
+            return id;
         }
 
 //Сеттеры для отдела и ЗП
