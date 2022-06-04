@@ -1,28 +1,29 @@
 public class Main {
     public static void main(String[] args) {
         int[] Employee = new int[10];
+        Employee startPerson = null;
+        for (int i = 0; i < Employee.length; i++)
 
 
-        Employee firstPerson = new Employee("Muslimov", "Ruslan", 0, 200);
+            startPerson = new Employee("Muslimov", "Ruslan",  200);
 
-        Employee secondPerson = new Employee("Ivanov", "Elisey", 1, 230);
+        Employee secondPerson = new Employee("Ivanov", "Elisey",  230);
 
-        Employee thirdPerson = new Employee("Salonenko", "Dmitry", 2, 100);
+        Employee thirdPerson = new Employee("Salonenko", "Dmitry",  100);
 
-        Employee fourthPerson = new Employee("Voitehovich", "Fedor", 3, 450);
+        Employee fourthPerson = new Employee("Voitehovich", "Fedor",  450);
 
-        Employee fifthPerson = new Employee("Kislev", "Anatoliy", 4, 320);
+        Employee fifthPerson = new Employee("Kislev", "Anatoliy",  320);
 
-        Employee sixPerson = new Employee("Ignatov", "Mihail", 5, 550);
+        Employee sixPerson = new Employee("Ignatov", "Mihail",  550);
 
-        System.out.println(firstPerson);
+        System.out.println(startPerson);
         System.out.println(secondPerson);
         System.out.println(thirdPerson);
         System.out.println(fourthPerson);
         System.out.println(fifthPerson);
         System.out.println(sixPerson);
         //расчет ЗП
-
 
 
         int[] arr = new int[5];
