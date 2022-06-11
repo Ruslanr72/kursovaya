@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        int[] Employee = new int[10];
+        int[] Employees = new int[10];
 
         Employee firstPerson = new Employee("Muslimov", "Ruslan", 1, 200);
 
@@ -22,39 +22,31 @@ public class Main {
         System.out.println(sixPerson);
         //расчет ЗП
 
-        int amount = fifthPerson.getSalary() + secondPerson.getSalary() + thirdPerson.getSalary() + fourthPerson.getSalary() + fifthPerson.getSalary() + secondPerson.getSalary();
-        System.out.println("Amount is " + amount);
-
-        int[] arr = {firstPerson.getSalary(), secondPerson.getSalary(), thirdPerson.getSalary(), fourthPerson.getSalary(), fifthPerson.getSalary(), sixPerson.getSalary()};
-        int max = arr[0];//максимальная ЗП
-        int min = arr[0];// минимальная ЗП
-        int avg = 0;//средняя ЗП
-
-        for (int b = 0; b < arr.length; b++) {
-            if (max < arr[b])
-                max = arr[b];
-            if (min > arr[b])
-                min = arr[b];
-            avg = avg + arr[b] / arr.length;
+        Employee[] Employee = {firstPerson, secondPerson, thirdPerson, fourthPerson, fifthPerson, sixPerson};
+        int min = Employee[0].getSalary();
+        int max = Employee[0].getSalary();
+        int avg = 0;
+        int summS = 0;
+        for (int i = 0; i < Employee.length; i++) {
+            if (min > Employee[i].getSalary()) {//Расчет минимальной ЗП
+                min = Employee[i].getSalary();
+            }
+            if (max < Employee[i].getSalary()) {//Расчет максимальной ЗП
+                max = Employee[i].getSalary();
+            }
+            summS = summS + Employee[i].getSalary();//сумма ЗП за месяц
+            avg = avg + Employee[i].getSalary() / Employee.length;//Расчет средней ЗП
         }
-        // выясняем ЗП min max avg
-        float c = 0;
-        for (float sumS : arr) {
-            c += sumS;
+            System.out.println("Amount is " + summS);
+            System.out.println("Maximum amount is " + max);
+            System.out.println("Minimum amount is " + min);
+            System.out.println("Average amount is " + avg);
+
+            //Выводим ФИО всех сотрудников
+        System.out.println("All names of employers are:");
+        for (int i = 0; i < Employee.length; i++) {
+            System.out.println(Employee[i].getEmployeeSurname() + " " + Employee[i].getEmployeeName() + ".");
+
         }
-        System.out.println("Maximum amount is " + max);
-        System.out.println("Minimum amount is " + min);
-        System.out.println("Average amount is " + avg);
-        System.out.println("\n");
-
-
-        //Выводим ФИО всех сотрудников
-        String allEmployers = firstPerson.getEmployeeSurname()+ " " + firstPerson.getEmployeeName() + ".\n"
-                +secondPerson.getEmployeeSurname()+ " " + secondPerson.getEmployeeName()+ ".\n" +
-                thirdPerson.getEmployeeSurname()+ " " + thirdPerson.getEmployeeName()+ ".\n" +
-                fourthPerson.getEmployeeSurname()+ " " + fourthPerson.getEmployeeName()+ ".\n" +
-                fifthPerson.getEmployeeSurname()+ " " + fifthPerson.getEmployeeName()+ ".\n" +
-                sixPerson.getEmployeeSurname()+ " " +secondPerson.getEmployeeName()+ ".\n";
-        System.out.println("All names of employee are:\n" + allEmployers);
     }
 }

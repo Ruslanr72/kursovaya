@@ -54,6 +54,7 @@ public class Employee {
                     "\nEmployee department is " + getId() + "\nEmployee salary is " + this.Salary + "\n===============\n";
 
         }
+
         @Override
         public boolean equals (Object other){
             if (this.getClass() != other.getClass() || other == null) {
