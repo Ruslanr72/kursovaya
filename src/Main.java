@@ -1,52 +1,79 @@
 public class Main {
     public static void main(String[] args) {
-        int[] Employees = new int[10];
+        Employee[] employees = {
+                new Employee("Muslimov", "Ruslan", 1, 200),
 
-        Employee firstPerson = new Employee("Muslimov", "Ruslan", 1, 200);
+                new Employee("Ivanov", "Elisey", 2, 230),
 
-        Employee secondPerson = new Employee("Ivanov", "Elisey", 2, 230);
+                new Employee("Salonenko", "Dmitry", 3, 100),
 
-        Employee thirdPerson = new Employee("Salonenko", "Dmitry", 3, 100);
+                new Employee("Voitehovich", "Fedor", 4, 450),
 
-        Employee fourthPerson = new Employee("Voitehovich", "Fedor", 4, 450);
+                new Employee("Kislev", "Anatoliy", 5, 320),
 
-        Employee fifthPerson = new Employee("Kislev", "Anatoliy", 5, 320);
+                new Employee("Ignatov", "Mihail", 6, 550),
+        };
+        System.out.println(employees[0]);
+        System.out.println(employees[1]);
+        System.out.println(employees[2]);
+        System.out.println(employees[3]);
+        System.out.println(employees[4]);
+        System.out.println(employees[5]);
 
-        Employee sixPerson = new Employee("Ignatov", "Mihail", 6, 550);
+        int minimum = min(employees);
+        System.out.println("Minimum amount is " + minimum);//Минимальная ЗП
+        int maximum = max(employees);
+        System.out.println("Maximum amount is " + maximum);//Максимальная ЗП
+        int average = avg(employees);
+        System.out.println("Average amount is " + average);//Средняя
+        int amount = amnt(employees);
+        System.out.println("Amount is " + amount);//Максимум
+    }//расчет ЗП
 
-        System.out.println(firstPerson);
-        System.out.println(secondPerson);
-        System.out.println(thirdPerson);
-        System.out.println(fourthPerson);
-        System.out.println(fifthPerson);
-        System.out.println(sixPerson);
-        //расчет ЗП
-
-        Employee[] Employee = {firstPerson, secondPerson, thirdPerson, fourthPerson, fifthPerson, sixPerson};
-        int min = Employee[0].getSalary();
-        int max = Employee[0].getSalary();
-        int avg = 0;
-        int summS = 0;
-        for (int i = 0; i < Employee.length; i++) {
-            if (min > Employee[i].getSalary()) {//Расчет минимальной ЗП
-                min = Employee[i].getSalary();
+    public static int min(Employee[] employees) {
+        int min = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if (min > employees[i].getSalary()) {
+                min = employees[i].getSalary();
             }
-            if (max < Employee[i].getSalary()) {//Расчет максимальной ЗП
-                max = Employee[i].getSalary();
-            }
-            summS = summS + Employee[i].getSalary();//сумма ЗП за месяц
-            avg = avg + Employee[i].getSalary() / Employee.length;//Расчет средней ЗП
         }
-            System.out.println("Amount is " + summS);
-            System.out.println("Maximum amount is " + max);
-            System.out.println("Minimum amount is " + min);
-            System.out.println("Average amount is " + avg);
-
-            //Выводим ФИО всех сотрудников
-        System.out.println("All names of employers are:");
-        for (int i = 0; i < Employee.length; i++) {
-            System.out.println(Employee[i].getEmployeeSurname() + " " + Employee[i].getEmployeeName() + ".");
-
-        }
+        return min;
     }
+
+    public static int max(Employee[] employees) {
+        int max = employees[0].getSalary();
+        for (int i = 0; i < employees.length; i++) {
+            if ((max < employees[i].getSalary())) {
+                max = employees[i].getSalary();
+            }
+
+        }
+        return max;
+    }
+
+    public static int avg(Employee[] employees) {
+        int avg = 0;
+        for (int i = 0; i < employees.length; i++) {
+            avg = avg + employees[i].getSalary() / employees.length;
+        }
+        return avg;
+    }
+
+    public static int amnt(Employee[] employees){
+        int amnt = 0;
+        for (int i = 0; i < employees.length; i++) {
+           amnt = amnt + employees[i].getSalary();
+        }return amnt;
+    }
+
+    public static int names(Employee[] employees){   //Выводим ФИО всех сотрудников
+        int names = 0;
+        for (int i = 0; i < employees.length; i++) {
+            System.out.println(employees[i].getEmployeeSurname() + " " + employees[i].getEmployeeName() + ".");
+        }return names;
+    }
+
+
+
+
 }
