@@ -20,6 +20,7 @@ public class Main {
         System.out.println(employees[4]);
         System.out.println(employees[5]);
 
+
         int minimum = min(employees);
         System.out.println("Minimum amount is " + minimum);//Минимальная ЗП
         int maximum = max(employees);
@@ -28,6 +29,7 @@ public class Main {
         System.out.println("Average amount is " + average);//Средняя
         int amount = amnt(employees);
         System.out.println("Amount is " + amount);//Максимум
+        names(employees);
     }//расчет ЗП
 
     public static int min(Employee[] employees) {
