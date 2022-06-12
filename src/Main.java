@@ -28,7 +28,6 @@ public class Main {
         System.out.println("Average amount is " + average);//Средняя
         int amount = amnt(employees);
         System.out.println("Amount is " + amount);//Максимум
-        int allNames = names(employees);
     }//расчет ЗП
 
     public static int min(Employee[] employees) {
@@ -53,11 +52,8 @@ public class Main {
     }
 
     public static int avg(Employee[] employees) {
-        int avg = 0;
-        for (int i = 0; i < employees.length; i++) {
-            avg = avg + employees[i].getSalary() / employees.length;
-        }
-        return avg;
+        int sum = amnt(employees);
+        return sum / employees.length;
     }
 
     public static int amnt(Employee[] employees){
@@ -68,12 +64,12 @@ public class Main {
 
     }
 
-    public static int names(Employee[] employees){   //Выводим ФИО всех сотрудников
-        int names = 0;
+    public static void names(Employee[] employees) {
         System.out.println("All names of Employees are:");
         for (int i = 0; i < employees.length; i++) {
             System.out.println(employees[i].getEmployeeSurname() + " " + employees[i].getEmployeeName() + ".");
-        }return names;
+        }
+
     }
 
 
