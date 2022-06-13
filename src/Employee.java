@@ -51,7 +51,7 @@ public class Employee {
         @Override
         public String toString () {
             return "Employee name is - " + this.employeeSurname + " " + this.employeeName + "." +
-                    "\nEmployee department is " + getId() + "\nEmployee salary is " + this.Salary + "\n===============\n";
+                    "\nEmployee department is " + getId() + "\nEmployee salary is " + this.Salary + "$" + "\n===============\n";
 
         }
 
